@@ -1,0 +1,53 @@
+
+# Vittesh — Object Management Examples
+# Vitte Foundation Shell
+
+# Observe the current space
+orya @here
+
+# Create source objects
+avora source "main.vit" @here
+avora source "kernel.vit" @here
+
+# Create document objects
+avora document "README.md" @here
+
+# Inspect object properties
+elyra @main
+elyra @kernel
+
+# Rename an object
+vyora @main :name = "application.vit"
+
+# Modify object metadata
+vyora @kernel :description = "Voyager_49 kernel"
+vyora @kernel :version = "0.1.0"
+
+# Create a logical space
+kyora "development" :isolated
+
+# Establish object relationships
+ovely @development @kernel
+ovely @development @application
+
+# Navigate to the development space
+nelya @development
+
+# Observe available objects
+orya @here
+
+# Inspect object relationships
+elyra @kernel :relations
+
+# Remove an object from its active space
+zerya @application
+
+# Restore a previous revision
+aevra @kernel :revision = 1
+
+# Return to the original space
+nelya @origin
+
+# Display the final object state
+orya @here
+

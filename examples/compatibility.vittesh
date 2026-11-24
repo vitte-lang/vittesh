@@ -1,0 +1,44 @@
+# Vittesh — VEX Compatibility Examples
+# Vitte Execution Exchange
+
+# Native execution
+vex native "vitte" :args = ["--version"]
+
+# Unix programs
+vex unix "git" :args = ["status"]
+vex unix "gcc" :args = ["--version"]
+vex unix "clang" :args = ["--version"]
+vex unix "python3" :args = ["--version"]
+
+# Linux
+vex linux "uname" :args = ["-a"]
+
+# macOS
+vex macos "sw_vers"
+
+# Windows
+vex windows "cmd.exe" :args = ["/c", "ver"]
+
+# Bash
+vex bash {
+    echo "Hello from Bash"
+    pwd
+    ls -la
+}
+
+# Zsh
+vex zsh {
+    echo "Hello from Zsh"
+    pwd
+}
+
+# PowerShell
+vex powershell {
+    Get-Location
+    Get-ChildItem
+}
+
+# Typed pipelines
+vex unix "git" :args = ["status", "--porcelain"]
+    => decode :git_status
+    => orya
